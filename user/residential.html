@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RAVs</title>
+    <meta name="twitter:title" content="RAVs">
+    <meta property="og:title" content="RAVs">
+    <meta name="twitter:image" content="https://residencyaddress.com/assets/img/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://residencyaddress.com/assets/img/favicon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="description" content="Residency Address Verification System">
+    <meta property="og:description" content="Residency Address Verification System">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="twitter:description" content="Residency Address Verification System">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/pulse/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,400i,500,600,600i,700,800,900">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-green">
+    <!-- Start: Help Modal -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="help">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header help-header">
+                    <h4 class="modal-title">Help</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div role="tablist" id="help">
+                        <div class="card help-card">
+                            <div class="card-header" role="tab">
+                                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="help .item-1" href="#help .item-1"><i class="la la-plus mr-2"></i>Getting Started</a></h5>
+                            </div>
+                            <div class="collapse item-1" role="tabpanel" data-parent="#help">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card help-card">
+                            <div class="card-header" role="tab">
+                                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="help .item-2" href="#help .item-2"><i class="la la-plus mr-2"></i>Adding an Address</a></h5>
+                            </div>
+                            <div class="collapse item-2" role="tabpanel" data-parent="#help">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card help-card">
+                            <div class="card-header" role="tab">
+                                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="help .item-3" href="#help .item-3"><i class="la la-plus mr-2"></i>Exporting Records</a></h5>
+                            </div>
+                            <div class="collapse item-3" role="tabpanel" data-parent="#help">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: Help Modal -->
+    <nav class="navbar navbar-light navbar-expand-md fixed-top shadow-sm bg-white pl-0 pr-0 pt-2 pb-2 desktop-hidden">
+        <div class="container-fluid">
+            <div class="col-2 text-center">
+                <div class="dropdown"><a class="dropdown-toggle no-caret link addaddress desktop-hidden" aria-expanded="false" data-toggle="dropdown" href="#"><i class="icon-plus"></i></a>
+                    <div class="dropdown-menu dropdown--menu pt-3"><a class="dropdown-item dropdown--item mb-2" href="add-residential.html">Add Residential</a><a class="dropdown-item dropdown--item mb-2" href="add-non-residential.html">Add Non-Residential</a></div>
+                </div><!-- Start: Mobile Add Address Button --><a class="link addaddress desktop-hidden" href="add-residential.html"></a><!-- End: Mobile Add Address Button -->
+            </div>
+            <div class="col text-center"><a href="#"><img class="img-fluid" src="../assets/img/logoB3.png" width="50%"></a></div>
+            <div class="col-2 text-center">
+                <!-- Start: Mobile Logout Button --><a class="link logout desktop-hidden" href="#"><i class="icon-power"></i></a><!-- End: Mobile Logout Button -->
+            </div>
+        </div>
+    </nav><!-- Start: Mobile Nav -->
+    <nav class="navbar navbar-light navbar-expand fixed-bottom shadow bg-white p-0 desktop-hidden">
+        <div class="container-fluid">
+            <ul class="navbar-nav nav-fill w-100">
+                <li class="nav-item text-center"><a class="nav-link active mobile-link" href="index.html"><i class="icon-screen-desktop mt-2 mobile-icon d-block"></i>Dashboard</a></li>
+                <li class="nav-item text-center"><a class="nav-link mobile-link" href="residential.html"><i class="icon-location-pin mt-2 mobile-icon d-block"></i>Residential</a></li>
+                <li class="nav-item text-center"><a class="nav-link mobile-link" href="non-residential.html"><i class="icon-direction mt-2 mobile-icon d-block"></i>Non-Residential</a></li>
+                <li class="nav-item text-center"><a class="nav-link mobile-link" href="settings.html"><i class="icon-settings mt-2 mobile-icon d-block"></i>Settings</a></li>
+            </ul>
+        </div>
+    </nav><!-- End: Mobile Nav -->
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <!-- Start: Sidebar -->
+            <div class="col-md-2 pl-0 pr-0 sidebar pt-4 vh-100 mobile-hidden">
+                <div class="pl-3 pr-3 text-center"><a href="index.html"><img class="img-fluid" src="../assets/img/logoB2.png" alt="Address Verification System" width="80%" title="Residency Address Verification System"></a>
+                    <div>
+                        <!-- Start: Upload Buttion --><a class="btn btn-success mt-4 mb-3 upload-btn" role="button" href="add-residential.html"><i class="la la-plus mr-2"></i>Add Address</a><!-- End: Upload Buttion -->
+                    </div>
+                </div>
+                <hr>
+                <div class="sidebar-nav">
+                    <!-- Start: Sidebar Nav -->
+                    <ul class="nav flex-column mt-4">
+                        <li class="nav-item mb-2"><a class="nav-link active navlink" href="index.html" title="Dashboard"><i class="icon-screen-desktop mr-2"></i>Dashboard</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="residential.html" title="Residential"><i class="icon-direction mr-2"></i>Residential</a></li>
+                        <li class="nav-item mb-2">
+                            <div><a class="btn text-nowrap navlink" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button" title="Non-Residential"><i class="icon-directions mr-2"></i>Non-Residential</a>
+                                <div class="collapse ml-3 mt-2 mb-2" id="collapse-2"><a class="navlink1 collapse-link mb-3 mt-3" href="add-non-residential.html"><i class="icon-plus mr-2"></i>Add New</a><a class="navlink1 collapse-link mb-2" href="non-residential.html"><i class="icon-pin mr-2"></i>Addresses</a></div>
+                            </div>
+                        </li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="messages.html" title="Messages"><i class="icon-bubbles mr-2"></i>Messages</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="settings.html" title="Settings"><i class="icon-settings mr-2"></i>Settings</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="#" title="Log Out"><i class="icon-power mr-2"></i>Log Out</a></li>
+                    </ul><!-- End: Sidebar Nav -->
+                    <!-- Start: Side Nav Bottom -->
+                    <div class="sidebar-nav-bottom">
+                        <!-- Start: Sidebar Nav -->
+                        <ul class="nav flex-column mt-4">
+                            <li class="nav-item mb-2"><a class="nav-link navlink" href="#help" data-toggle="modal" data-target="#help" title="Help"><i class="icon-question mr-2"></i>Help</a></li>
+                        </ul><!-- End: Sidebar Nav -->
+                        <div class="sidebar-footer"><span>© RAVs Version 1.0</span></div>
+                    </div><!-- End: Side Nav Bottom -->
+                </div>
+            </div><!-- End: Sidebar -->
+            <!-- Start: Main -->
+            <div class="col main-col">
+                <!-- Start: Page Title -->
+                <div class="mb-5">
+                    <div class="row p-0">
+                        <div class="col-md-3">
+                            <h1 class="page-title mb-0">All Address</h1><span id="date" class="date mobile-hidden">Text</span>
+                        </div>
+                        <div class="col-md-6 mobile-hidden">
+                            <form>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text prepend"><i class="icon-magnifier search-icon"></i></span></div><input class="form-control search-box" type="text" id="search" placeholder="Search Address Table" autofocus="">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-3 mobile-hidden">
+                            <div class="dropdown float-right mr-5 mobile-hidden"><button class="btn dropdown-toggle dropdown-btn no-caret pt-0" aria-expanded="false" data-toggle="dropdown" type="button"><img class="rounded-circle img-fluid mr-2" src="../assets/img/050585.jpg" width="30">Jason Borne&nbsp;</button>
+                                <div class="dropdown-menu dropdown--menu">
+                                    <div class="text-center"><img class="rounded-circle img-fluid img-border" src="../assets/img/050585.jpg" width="80">
+                                        <h6 class="mb-0 mt-2">Supervisor</h6>
+                                        <hr>
+                                    </div><a class="dropdown-item dropdown--item" href="settings.html">My Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End: Page Title -->
+                <!-- Start: Page Content -->
+                <div>
+                    <div class="card card1">
+                        <div class="card-body pt-0 pb-3 pl-3 pr-3">
+                            <div class="table-responsive text-nowrap">
+                                <table class="table table-hover table-bordered display responsive" id="table2" style="width: 100%;">
+                                    <thead class="table-header">
+                                        <tr class="table-h">
+                                            <th class="desktop">#</th>
+                                            <th class="desktop">Verification ID</th>
+                                            <th class="desktop">Full Name</th>
+                                            <th class="desktop">Date of Birth</th>
+                                            <th class="desktop">Age</th>
+                                            <th class="desktop">Sex</th>
+                                            <th class="desktop">State of Origin</th>
+                                            <th class="desktop">Local Government Area</th>
+                                            <th class="desktop">Home Town</th>
+                                            <th class="desktop">Occupation</th>
+                                            <th class="text-nowrap desktop">Phone Number</th>
+                                            <th class="text-nowrap desktop">E-Mail Address</th>
+                                            <th class="text-nowrap desktop">Building Type</th>
+                                            <th class="desktop">Address</th>
+                                            <th class="text-nowrap desktop">Logitude/Latitude<br></th>
+                                            <th class="text-nowrap desktop">Duration of Stay</th>
+                                            <th class="text-nowrap desktop">1st Witness</th>
+                                            <th class="text-nowrap desktop">1st Witness R/ship</th>
+                                            <th class="text-nowrap desktop">1st Witness Phone No</th>
+                                            <th class="text-nowrap desktop">2nd Witness</th>
+                                            <th class="text-nowrap desktop">2nd Witness R/ship</th>
+                                            <th class="text-nowrap desktop">2nd Witness Phone No</th>
+                                            <th class="text-nowrap desktop">Valid Identification</th>
+                                            <th class="text-nowrap desktop">Proof of Residence</th>
+                                            <th class="text-nowrap desktop">Photo Image</th>
+                                            <th class="desktop">Date</th>
+                                            <th class="desktop">Status</th>
+                                            <th class="desktop">Manage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01</td>
+                                            <td>
+                                                <p class="table-p">012345678</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">Peter Parker</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">26-03-1991</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">29</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">Male</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Osun</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Osun</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Ile-ife</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Photograher</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">08031001000</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">p.parker@gmail.com</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Residential</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">No 12, Flat 3, David Dodo Street Gwarinpa. Abuja</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">9.0001001, 8.1232332</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">2 Years</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">Jane White</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Brother</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">08010002000</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">Jessica Brown</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Neigbour</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">08090001000</p>
+                                            </td>
+                                            <td><a class="table-link" href="#">.../doc/1234.jpg</a></td>
+                                            <td><a class="table-link" href="#">.../doc/78.jpg</a></td>
+                                            <td><a class="table-link" href="#">.../doc/768.jpg</a></td>
+                                            <td>
+                                                <p class="text-nowrap table-p">2020-07-03 23:45</p>
+                                            </td>
+                                            <td title="{{comment added by admin}}"><span class="badge badge-pill badge-warning card-badge-g">Verified</span></td>
+                                            <td>
+                                                <div class="value-div2">
+                                                    <div class="dropdown"><a class="btn btn-sm dropdown-toggle no-caret dropdown-btn" aria-expanded="false" data-toggle="dropdown" role="button"><i class="la la-chevron-circle-down mr-1"></i><span>Manage</span></a>
+                                                        <div class="dropdown-menu"><a class="dropdown-item dropdown--item" href="address-detail.html"><i class="icon-eye mr-2"></i>View Record</a><a class="dropdown-item dropdown--item" href="view-details.html"><i class="icon-pencil mr-2"></i>Edit Record</a></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>02</td>
+                                            <td>
+                                                <p class="table-p">123456789</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">Gwen Stacey</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">01-09-1993</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">26</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">Female</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Lagos</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Ikeja</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Igundo</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">Health Worker</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">08012349876</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">spidergwen@yahoo.com</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Government</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">Block 4, Agwu Kalu Way, Wuse 2. Abuja</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">9.2351001, 8.000332</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">11 Months</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">Ben Patterson</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Family</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">08020002000</p>
+                                            </td>
+                                            <td>
+                                                <p class="text-nowrap table-p">James Gordon</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">Brother</p>
+                                            </td>
+                                            <td>
+                                                <p class="table-p">08023001210</p>
+                                            </td>
+                                            <td><a class="table-link" href="#">.../doc/008.jpg</a></td>
+                                            <td><a class="table-link" href="#">.../doc/678.jpg</a></td>
+                                            <td><a class="table-link" href="#">.../doc/675.jpg</a></td>
+                                            <td>
+                                                <p class="text-nowrap table-p">2020-07-04 13:22</p>
+                                            </td>
+                                            <td title="{{comment added by admin}}"><span class="badge badge-pill badge-warning card-badge-b">Pending</span></td>
+                                            <td>
+                                                <div class="value-div2">
+                                                    <div class="dropdown"><a class="btn btn-sm dropdown-toggle no-caret dropdown-btn" aria-expanded="false" data-toggle="dropdown" role="button"><i class="la la-chevron-circle-down mr-1"></i><span>Manage</span></a>
+                                                        <div class="dropdown-menu"><a class="dropdown-item dropdown--item" href="address-detail.html"><i class="icon-eye mr-2"></i>View Record</a><a class="dropdown-item dropdown--item" href="view-details.html"><i class="icon-pencil mr-2"></i>Edit Record</a></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End: Page Content -->
+            </div><!-- End: Main -->
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+
+</html>

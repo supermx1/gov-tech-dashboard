@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RAVs</title>
+    <meta name="twitter:title" content="RAVs">
+    <meta property="og:title" content="RAVs">
+    <meta name="twitter:image" content="https://residencyaddress.com/assets/img/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://residencyaddress.com/assets/img/favicon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="description" content="Residency Address Verification System">
+    <meta property="og:description" content="Residency Address Verification System">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="twitter:description" content="Residency Address Verification System">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/pulse/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,400i,500,600,600i,700,800,900">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
+</head>
+
+<body class="p-5">
+    <div class="container attestation-container bg">
+        <div><img class="img-fluid" src="ondo.png" width="20%"></div>
+        <div class="text-center"><img class="img-fluid" src="../assets/img/favicon.png" width="80px">
+            <h4 class="attest-subheading">FEDERAL REPUBLIC OF NIGERIA</h4>
+            <h1 class="attest-heading mb-0">RESIDENCY ADDRESS VERIFICATION</h1>
+            <h4 class="attest-subheading mb-4">CERTIFICATE</h4>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="mb-0 attest-heading-p2 float-right">Verification ID:<span class="underline">{{ver_id}}</span></p>
+                <p class="mb-0 attest-heading-p2">Date:<span class="underline">{{current_date}}</span></p>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="row mt-3">
+            <div class="col-md-12 mb-5">
+                <div class="text-center">
+                    <h5 class="text-uppercase attest-body-h mb-5 mt-4">Affidavit of Residence </h5>
+                    <p>ACT OF STATE ASSEMBLY: BILL 00125</p>
+                </div>
+                <div class="table-responsive table-bordered" style="border: 0;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th colspan="2">PROOF OF ADDRESS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>REF NO: {{REF_NO}}</h4>
+                                </td>
+                                <td><small>DATE OF REGISTRATION</small>
+                                    <h5>23 SEPT 2020</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><small>HOUSE NUMBER</small>
+                                    <h5>{{HOUSE_NO}}</h5>
+                                </td>
+                                <td><small>STREET NAME</small>
+                                    <h5>{{STREET_NAME}}</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><small>AREA - CITY</small>
+                                    <h5>{{AREA_CITY}}</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><small>LONGITUDE/LATITUDE</small>
+                                    <h5>{{LONG_LAT}}</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-responsive table-bordered" style="border: 0;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th colspan="2">PERSON HEREIN REGISTERED</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><small>FULL NAME</small>
+                                    <h5>{{PERSON_FULLNAME}}</h5>
+                                </td>
+                                <td><small>EMAIL</small>
+                                    <h5>{{PERSON_EMAIL}}</h5>
+                                </td>
+                                <td><small>PHONE NUMBER</small>
+                                    <h5>{{PERSON_PHONE}}</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col">
+                <div><img class="img-fluid" src="../assets/img/sig.png" width="40%"></div>
+                <h5 class="mb-0">{{DIRECTOR_NAME}}</h5>
+                <h5 class="mb-0">AUTHORIZED SIGNATURE</h5>
+            </div>
+            <div class="col text-right"><img class="img-fluid" src="../assets/img/verify.png" width="200"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+
+</html>

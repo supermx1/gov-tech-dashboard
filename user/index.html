@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RAVs</title>
+    <meta name="twitter:title" content="RAVs">
+    <meta property="og:title" content="RAVs">
+    <meta name="twitter:image" content="https://residencyaddress.com/assets/img/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://residencyaddress.com/assets/img/favicon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="description" content="Residency Address Verification System">
+    <meta property="og:description" content="Residency Address Verification System">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="twitter:description" content="Residency Address Verification System">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/pulse/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,400i,500,600,600i,700,800,900">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-green">
+    <!-- Start: Help Modal -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="help">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header help-header">
+                    <h4 class="modal-title">Help</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div role="tablist" id="help">
+                        <div class="card help-card">
+                            <div class="card-header" role="tab">
+                                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="help .item-1" href="#help .item-1"><i class="la la-plus mr-2"></i>Getting Started</a></h5>
+                            </div>
+                            <div class="collapse item-1" role="tabpanel" data-parent="#help">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card help-card">
+                            <div class="card-header" role="tab">
+                                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="help .item-2" href="#help .item-2"><i class="la la-plus mr-2"></i>Adding an Address</a></h5>
+                            </div>
+                            <div class="collapse item-2" role="tabpanel" data-parent="#help">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card help-card">
+                            <div class="card-header" role="tab">
+                                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="help .item-3" href="#help .item-3"><i class="la la-plus mr-2"></i>Exporting Records</a></h5>
+                            </div>
+                            <div class="collapse item-3" role="tabpanel" data-parent="#help">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: Help Modal -->
+    <nav class="navbar navbar-light navbar-expand-md fixed-top shadow-sm bg-white pl-0 pr-0 pt-2 pb-2 desktop-hidden">
+        <div class="container-fluid">
+            <div class="col-2 text-center">
+                <div class="dropdown"><a class="dropdown-toggle no-caret link addaddress desktop-hidden" aria-expanded="false" data-toggle="dropdown" href="#"><i class="icon-plus"></i></a>
+                    <div class="dropdown-menu dropdown--menu pt-3"><a class="dropdown-item dropdown--item mb-2" href="add-residential.html">Add Residential</a><a class="dropdown-item dropdown--item mb-2" href="add-non-residential.html">Add Non-Residential</a></div>
+                </div><!-- Start: Mobile Add Address Button --><a class="link addaddress desktop-hidden" href="add-residential.html"></a><!-- End: Mobile Add Address Button -->
+            </div>
+            <div class="col text-center"><a href="#"><img class="img-fluid" src="../assets/img/logoB3.png" width="50%"></a></div>
+            <div class="col-2 text-center">
+                <!-- Start: Mobile Logout Button --><a class="link logout desktop-hidden" href="#"><i class="icon-power"></i></a><!-- End: Mobile Logout Button -->
+            </div>
+        </div>
+    </nav><!-- Start: Mobile Nav -->
+    <nav class="navbar navbar-light navbar-expand fixed-bottom shadow bg-white p-0 desktop-hidden">
+        <div class="container-fluid">
+            <ul class="navbar-nav nav-fill w-100">
+                <li class="nav-item text-center"><a class="nav-link active mobile-link" href="index.html"><i class="icon-screen-desktop mt-2 mobile-icon d-block"></i>Dashboard</a></li>
+                <li class="nav-item text-center"><a class="nav-link mobile-link" href="residential.html"><i class="icon-location-pin mt-2 mobile-icon d-block"></i>Residential</a></li>
+                <li class="nav-item text-center"><a class="nav-link mobile-link" href="non-residential.html"><i class="icon-direction mt-2 mobile-icon d-block"></i>Non-Residential</a></li>
+                <li class="nav-item text-center"><a class="nav-link mobile-link" href="settings.html"><i class="icon-settings mt-2 mobile-icon d-block"></i>Settings</a></li>
+            </ul>
+        </div>
+    </nav><!-- End: Mobile Nav -->
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <!-- Start: Sidebar -->
+            <div class="col-md-2 pl-0 pr-0 sidebar pt-4 vh-100 mobile-hidden">
+                <div class="pl-3 pr-3 text-center"><a href="index.html"><img class="img-fluid" src="../assets/img/logoB2.png" alt="Address Verification System" width="80%" title="Residency Address Verification System"></a>
+                    <div>
+                        <!-- Start: Upload Buttion --><a class="btn btn-success mt-4 mb-3 upload-btn" role="button" href="add-residential.html"><i class="la la-plus mr-2"></i>Add Address</a><!-- End: Upload Buttion -->
+                    </div>
+                </div>
+                <hr>
+                <div class="sidebar-nav">
+                    <!-- Start: Sidebar Nav -->
+                    <ul class="nav flex-column mt-4">
+                        <li class="nav-item mb-2"><a class="nav-link active navlink" href="index.html" title="Dashboard"><i class="icon-screen-desktop mr-2"></i>Dashboard</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="residential.html" title="Residential"><i class="icon-direction mr-2"></i>Residential</a></li>
+                        <li class="nav-item mb-2">
+                            <div><a class="btn text-nowrap navlink" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button" title="Non-Residential"><i class="icon-directions mr-2"></i>Non-Residential</a>
+                                <div class="collapse ml-3 mt-2 mb-2" id="collapse-2"><a class="navlink1 collapse-link mb-3 mt-3" href="add-non-residential.html"><i class="icon-plus mr-2"></i>Add New</a><a class="navlink1 collapse-link mb-2" href="non-residential.html"><i class="icon-pin mr-2"></i>Addresses</a></div>
+                            </div>
+                        </li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="messages.html" title="Messages"><i class="icon-bubbles mr-2"></i>Messages</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="settings.html" title="Settings"><i class="icon-settings mr-2"></i>Settings</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="#" title="Log Out"><i class="icon-power mr-2"></i>Log Out</a></li>
+                    </ul><!-- End: Sidebar Nav -->
+                    <!-- Start: Side Nav Bottom -->
+                    <div class="sidebar-nav-bottom">
+                        <!-- Start: Sidebar Nav -->
+                        <ul class="nav flex-column mt-4">
+                            <li class="nav-item mb-2"><a class="nav-link navlink" href="#help" data-toggle="modal" data-target="#help" title="Help"><i class="icon-question mr-2"></i>Help</a></li>
+                        </ul><!-- End: Sidebar Nav -->
+                        <div class="sidebar-footer"><span>© RAVs Version 1.0</span></div>
+                    </div><!-- End: Side Nav Bottom -->
+                </div>
+            </div><!-- End: Sidebar -->
+            <!-- Start: Main -->
+            <div class="col main-col">
+                <!-- Start: Page Title -->
+                <div class="mb-5">
+                    <div class="dropdown float-right mr-5 mobile-hidden"><button class="btn dropdown-toggle dropdown-btn no-caret pt-0" aria-expanded="false" data-toggle="dropdown" type="button"><img class="rounded-circle img-fluid mr-2" src="../assets/img/050585.jpg" width="30">Jason Borne&nbsp;</button>
+                        <div class="dropdown-menu dropdown--menu">
+                            <div class="text-center"><img class="rounded-circle img-fluid img-border" src="../assets/img/050585.jpg" width="80">
+                                <h6 class="mb-0 mt-2">Supervisor</h6>
+                                <hr>
+                            </div><a class="dropdown-item dropdown--item" href="settings.html">My Profile</a>
+                        </div>
+                    </div>
+                    <h1 class="page-title mb-0">Dashboard</h1><span id="date" class="date mobile-hidden">Text</span>
+                </div><!-- End: Page Title -->
+                <!-- Start: Page Content -->
+                <div>
+                    <div class="row p-0">
+                        <!-- Start: Counter 1 -->
+                        <div class="col-sm-3">
+                            <div class="card dashboard-card mb-4 g">
+                                <div class="card-body d-flex">
+                                    <div class="d-flex mr-2"><i class="icon-location-pin card-icon"></i></div>
+                                    <div><a class="dashboard-card-link" href="#">
+                                            <h1 class="mb-0 dashboard-card-h blue">120300</h1>
+                                        </a><span class="dashboard-card-span">Total Registered Addresses</span></div>
+                                </div>
+                            </div>
+                        </div><!-- End: Counter 1 -->
+                        <!-- Start: Counter 2 -->
+                        <div class="col-md-3">
+                            <div class="card dashboard-card mb-4 g">
+                                <div class="card-body d-flex">
+                                    <div class="d-flex mr-2"><i class="icon-direction card-icon"></i></div>
+                                    <div><a class="dashboard-card-link" href="#">
+                                            <h1 class="mb-0 dashboard-card-h green">100020</h1>
+                                        </a><span class="dashboard-card-span">Residential Addresses</span></div>
+                                </div>
+                            </div>
+                        </div><!-- End: Counter 2 -->
+                        <!-- Start: Counter 3 -->
+                        <div class="col-md-3">
+                            <div class="card dashboard-card mb-4 g">
+                                <div class="card-body d-flex">
+                                    <div class="d-flex mr-2"><i class="icon-directions card-icon"></i></div>
+                                    <div><a class="dashboard-card-link" href="#">
+                                            <h1 class="mb-0 dashboard-card-h orange">20280</h1>
+                                        </a><span class="dashboard-card-span">Non-residential Addresses</span></div>
+                                </div>
+                            </div>
+                        </div><!-- End: Counter 3 -->
+                        <!-- Start: Counter 4 -->
+                        <div class="col-md-3">
+                            <div class="card dashboard-card mb-4 g g-card">
+                                <div class="card-body d-flex">
+                                    <div class="d-flex mr-2"><i class="icon-map card-icon"></i></div>
+                                    <div><a class="dashboard-card-link" href="#">
+                                            <h1 class="mb-0 dashboard-card-h">5</h1>
+                                        </a><span class="dashboard-card-span">Active States</span></div>
+                                </div>
+                            </div>
+                        </div><!-- End: Counter 4 -->
+                        <!-- Start: Map -->
+                        <div class="col-md-9 mb-4 mt-4" data-aos="fade-right" data-aos-delay="750">
+                            <h6 class="section-title mb-3"><i class="icon-map mr-2"></i>Map</h6><!-- Start: Map -->
+                            <div class="maps">
+                                <div id="map"></div><!-- Start: Leaflet Map Code --><script>
+    //Leaflet.js Map Initialization
+	var mymap = L.map('map').setView([9.0820, 8.6753], 7);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+// Add a MAP Point
+L.marker([9.058446, 7.463089]).addTo(mymap)
+		.bindPopup("<b>Jaruma Hospital</b><br />Long: 9.058446, Lat:7.463089").openPopup();
+
+L.marker([8.8940691, 7.1860402]).addTo(mymap)
+		.bindPopup("<b>Salamandar Restuarant</b><br />Long: 8.8940691, Lat:7.1860402").openPopup();
+
+L.marker([11.56375, 7.432831]).addTo(mymap)
+		.bindPopup("<b>Test Edmond</b><br />Long: 8.8940691, Lat:7.1860402").openPopup();
+
+var popup = L.popup();
+
+</script><!-- End: Leaflet Map Code -->
+                            </div><!-- End: Map -->
+                        </div><!-- End: Map -->
+                        <div class="col-md-3 mb-4 mt-4" data-aos="fade-left" data-aos-delay="900">
+                            <h6 class="section-title mb-3"><i class="icon-pie-chart mr-2"></i>Location Data</h6>
+                            <div class="card chart-card">
+                                <div class="card-body">
+                                    <div class="table-responsive table-borderless">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr class="t-head">
+                                                    <th>Location Use</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Residential</td>
+                                                    <td class="t-cell-number">12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Religious</td>
+                                                    <td class="t-cell-number">2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>School</td>
+                                                    <td class="t-cell-number">1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Government</td>
+                                                    <td class="t-cell-number">21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Business</td>
+                                                    <td class="t-cell-number">1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Farm</td>
+                                                    <td class="t-cell-number">31</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End: Page Content -->
+            </div><!-- End: Main -->
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+
+</html>

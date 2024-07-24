@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RAVs</title>
+    <meta name="twitter:title" content="RAVs">
+    <meta property="og:title" content="RAVs">
+    <meta name="twitter:image" content="https://residencyaddress.com/assets/img/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://residencyaddress.com/assets/img/favicon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="description" content="Residency Address Verification System">
+    <meta property="og:description" content="Residency Address Verification System">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="twitter:description" content="Residency Address Verification System">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="500x500" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/pulse/bootstrap.min.css">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,400i,500,600,600i,700,800,900">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-green">
+    <!-- Start: Compose Message -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="compose">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header compose-message-header">
+                    <h4 class="modal-title">Compose Message</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group"><label class="field-label mb-2" for="messagerecipient">Recipient<span class="ml-1 red">*</span></label><select class="form-control input-box select" id="messagerecipient" style="width: 100%;" required="" name="messagerecipient">
+                                <option value="12" selected="">- Select Recipient -</option>
+                                <option value="Joanna Ecoka (j.ecoka@ravs.com.ng)">Joanna Ecoka (j.ecoka@ravs.com.ng)</option>
+                                <option value="Francis Brown (francis.b@ravs.com.ng)">Francis Brown (francis.b@ravs.com.ng)</option>
+                            </select></div>
+                        <div class="form-group"><label class="field-label mb-2" for="messagetitle">Message Title<span class="ml-1 red">*</span></label><input class="form-control input-box" type="text" id="messagetitle" placeholder="e.g. Hello World" required="" name="messagetitle"></div>
+                        <div class="form-group"><label class="field-label mb-2" for="editor">Message Body<span class="ml-1 red">*</span></label>
+                            <div id="editor"></div>
+                            <div id="editor-1"></div>
+                        </div>
+                        <div class="form-group"><button class="btn btn3" type="submit">Send Message</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: Compose Message -->
+    <!-- Start: Help Modal -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="help">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header help-header">
+                    <h4 class="modal-title">Help</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div role="tablist" id="help">
+                        <div class="card help-card">
+                            <div class="card-header" role="tab">
+                                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="help .item-1" href="#help .item-1"><i class="la la-plus mr-2"></i>Getting Started</a></h5>
+                            </div>
+                            <div class="collapse item-1" role="tabpanel" data-parent="#help">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card help-card">
+                            <div class="card-header" role="tab">
+                                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="help .item-2" href="#help .item-2"><i class="la la-plus mr-2"></i>Adding an Address</a></h5>
+                            </div>
+                            <div class="collapse item-2" role="tabpanel" data-parent="#help">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card help-card">
+                            <div class="card-header" role="tab">
+                                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="help .item-3" href="#help .item-3"><i class="la la-plus mr-2"></i>Exporting Records</a></h5>
+                            </div>
+                            <div class="collapse item-3" role="tabpanel" data-parent="#help">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: Help Modal -->
+    <nav class="navbar navbar-light navbar-expand-md fixed-top shadow-sm bg-white pl-0 pr-0 pt-2 pb-2 desktop-hidden">
+        <div class="container-fluid">
+            <div class="col-2 text-center">
+                <div class="dropdown"><a class="dropdown-toggle no-caret link addaddress desktop-hidden" aria-expanded="false" data-toggle="dropdown" href="#"><i class="icon-plus"></i></a>
+                    <div class="dropdown-menu dropdown--menu pt-3"><a class="dropdown-item dropdown--item mb-2" href="add-residential.html">Add Residential</a><a class="dropdown-item dropdown--item mb-2" href="add-non-residential.html">Add Non-Residential</a></div>
+                </div><!-- Start: Mobile Add Address Button --><a class="link addaddress desktop-hidden" href="add-residential.html"></a><!-- End: Mobile Add Address Button -->
+            </div>
+            <div class="col text-center"><a href="#"><img class="img-fluid" src="../assets/img/logoB3.png" width="50%"></a></div>
+            <div class="col-2 text-center">
+                <!-- Start: Mobile Logout Button --><a class="link logout desktop-hidden" href="#"><i class="icon-power"></i></a><!-- End: Mobile Logout Button -->
+            </div>
+        </div>
+    </nav><!-- Start: Mobile Nav -->
+    <nav class="navbar navbar-light navbar-expand fixed-bottom shadow bg-white p-0 desktop-hidden">
+        <div class="container-fluid">
+            <ul class="navbar-nav nav-fill w-100">
+                <li class="nav-item text-center"><a class="nav-link active mobile-link" href="index.html"><i class="icon-screen-desktop mt-2 mobile-icon d-block"></i>Dashboard</a></li>
+                <li class="nav-item text-center"><a class="nav-link mobile-link" href="residential.html"><i class="icon-location-pin mt-2 mobile-icon d-block"></i>Residential</a></li>
+                <li class="nav-item text-center"><a class="nav-link mobile-link" href="non-residential.html"><i class="icon-direction mt-2 mobile-icon d-block"></i>Non-Residential</a></li>
+                <li class="nav-item text-center"><a class="nav-link mobile-link" href="settings.html"><i class="icon-settings mt-2 mobile-icon d-block"></i>Settings</a></li>
+            </ul>
+        </div>
+    </nav><!-- End: Mobile Nav -->
+    <div class="container-fluid">
+        <div class="row vh-100">
+            <!-- Start: Sidebar -->
+            <div class="col-md-2 pl-0 pr-0 sidebar pt-4 vh-100 mobile-hidden">
+                <div class="pl-3 pr-3 text-center"><a href="index.html"><img class="img-fluid" src="../assets/img/logoB2.png" alt="Address Verification System" width="80%" title="Residency Address Verification System"></a>
+                    <div>
+                        <!-- Start: Upload Buttion --><a class="btn btn-success mt-4 mb-3 upload-btn" role="button" href="add-residential.html"><i class="la la-plus mr-2"></i>Add Address</a><!-- End: Upload Buttion -->
+                    </div>
+                </div>
+                <hr>
+                <div class="sidebar-nav">
+                    <!-- Start: Sidebar Nav -->
+                    <ul class="nav flex-column mt-4">
+                        <li class="nav-item mb-2"><a class="nav-link active navlink" href="index.html" title="Dashboard"><i class="icon-screen-desktop mr-2"></i>Dashboard</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="residential.html" title="Residential"><i class="icon-direction mr-2"></i>Residential</a></li>
+                        <li class="nav-item mb-2">
+                            <div><a class="btn text-nowrap navlink" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-2" href="#collapse-2" role="button" title="Non-Residential"><i class="icon-directions mr-2"></i>Non-Residential</a>
+                                <div class="collapse ml-3 mt-2 mb-2" id="collapse-2"><a class="navlink1 collapse-link mb-3 mt-3" href="add-non-residential.html"><i class="icon-plus mr-2"></i>Add New</a><a class="navlink1 collapse-link mb-2" href="non-residential.html"><i class="icon-pin mr-2"></i>Addresses</a></div>
+                            </div>
+                        </li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="messages.html" title="Messages"><i class="icon-bubbles mr-2"></i>Messages</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="settings.html" title="Settings"><i class="icon-settings mr-2"></i>Settings</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link navlink" href="#" title="Log Out"><i class="icon-power mr-2"></i>Log Out</a></li>
+                    </ul><!-- End: Sidebar Nav -->
+                    <!-- Start: Side Nav Bottom -->
+                    <div class="sidebar-nav-bottom">
+                        <!-- Start: Sidebar Nav -->
+                        <ul class="nav flex-column mt-4">
+                            <li class="nav-item mb-2"><a class="nav-link navlink" href="#help" data-toggle="modal" data-target="#help" title="Help"><i class="icon-question mr-2"></i>Help</a></li>
+                        </ul><!-- End: Sidebar Nav -->
+                        <div class="sidebar-footer"><span>© RAVs Version 1.0</span></div>
+                    </div><!-- End: Side Nav Bottom -->
+                </div>
+            </div><!-- End: Sidebar -->
+            <!-- Start: Main -->
+            <div class="col main-col">
+                <!-- Start: Page Title -->
+                <div class="mb-5">
+                    <div class="dropdown float-right mr-5 mobile-hidden"><button class="btn dropdown-toggle dropdown-btn no-caret pt-0" aria-expanded="false" data-toggle="dropdown" type="button"><img class="rounded-circle img-fluid mr-2" src="../assets/img/050585.jpg" width="30">Jason Borne&nbsp;</button>
+                        <div class="dropdown-menu dropdown--menu">
+                            <div class="text-center"><img class="rounded-circle img-fluid img-border" src="../assets/img/050585.jpg" width="80">
+                                <h6 class="mb-0 mt-2">Supervisor</h6>
+                                <hr>
+                            </div><a class="dropdown-item dropdown--item" href="settings.html">My Profile</a>
+                        </div>
+                    </div>
+                    <h1 class="page-title mb-0">Sent Messages</h1><span id="date" class="date mobile-hidden">Text</span>
+                </div><!-- End: Page Title -->
+                <!-- Start: Page Content -->
+                <div>
+                    <div class="row p-0">
+                        <div class="col-md-2">
+                            <!-- Start: Upload Buttion --><a class="btn btn-success btn-block upload-btn" role="button" href="#compose" data-toggle="modal" data-target="#compose"><i class="la la-pencil-square mr-2"></i>Compose</a><!-- End: Upload Buttion -->
+                            <div class="card card1 mt-3">
+                                <div class="card-body pl-0 pr-0">
+                                    <!-- Start: Sidebar Nav -->
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item mb-2"><a class="nav-link navlink" href="messages.html"><i class="icon-login mr-3"></i>Recieved</a></li>
+                                        <li class="nav-item mb-2"><a class="nav-link navlink" href="sent-messages.html"><i class="icon-logout mr-3"></i>Sent</a></li>
+                                    </ul><!-- End: Sidebar Nav -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card card1">
+                                <div class="card-body">
+                                    <div class="table-responsive text-nowrap">
+                                        <table class="table table-hover table-bordered display responsive" id="table0" style="width: 100%;">
+                                            <thead class="table-header">
+                                                <tr class="table-h">
+                                                    <th class="desktop">#</th>
+                                                    <th class="desktop">Title</th>
+                                                    <th class="desktop">Recipient</th>
+                                                    <th class="desktop">Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>01</td>
+                                                    <td><a class="table-link" href="read-message.html">A Message Title</a></td>
+                                                    <td>
+                                                        <p class="text-nowrap table-p">Peter Parker (p.parker@ravs.com.ng)</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-nowrap table-p">2020-07-03 23:45</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>02</td>
+                                                    <td>
+                                                        <p class="table-p"></p><a class="table-link" href="read-message.html">A Message Title 2</a>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-nowrap table-p">Gwen Stacey (g.stay@ravs.com.ng)</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="text-nowrap table-p">2020-07-04 13:22</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End: Page Content -->
+            </div><!-- End: Main -->
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-html5-1.6.2/b-print-1.6.2/cr-1.5.2/fc-3.3.1/fh-3.1.7/kt-2.5.2/r-2.2.5/sc-2.0.2/sp-1.1.1/datatables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+
+</html>
